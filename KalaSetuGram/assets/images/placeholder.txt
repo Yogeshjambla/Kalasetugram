@@ -1,0 +1,48 @@
+# Image Placeholders
+
+This directory should contain the following images for the KalaSetuGram website:
+
+## Logo and Branding
+- logo.png (Main logo)
+- logo-white.png (White version for dark backgrounds)
+- favicon.ico (Website favicon)
+
+## Hero Section
+- hero-craft.jpg (Main hero image showing traditional crafts)
+- pattern-overlay.png (Decorative pattern overlay)
+
+## Craft Categories
+- kondapalli-toys.jpg (Kondapalli wooden toys)
+- kalamkari.jpg (Kalamkari textile art)
+- bidriware.jpg (Bidriware metal crafts)
+- pochampally-ikat.jpg (Pochampally Ikat textiles)
+- lepakshi.jpg (Lepakshi handicrafts)
+- nirmal-paintings.jpg (Nirmal wooden paintings)
+
+## Artisans
+- artisan1.jpg (Kondapalli toy maker)
+- artisan2.jpg (Kalamkari artist)
+- artisan3.jpg (Bidriware craftsman)
+
+## Payment and Footer
+- payment-methods.png (Accepted payment methods logos)
+
+## Recommended Image Sizes:
+- Logo: 200x60px (PNG with transparency)
+- Hero image: 1920x1080px (High quality JPEG)
+- Craft category images: 400x300px (JPEG)
+- Artisan photos: 300x300px (Square, JPEG)
+- Payment methods: 200x40px (PNG)
+
+## Image Sources:
+For production, use:
+1. Official photos from Andhra Pradesh Tourism
+2. Licensed stock photos from Unsplash/Pexels
+3. Original photography of actual artisans and crafts
+4. Government heritage documentation
+
+## Temporary Placeholders:
+Until actual images are available, you can use:
+- https://via.placeholder.com/400x300/d4a574/ffffff?text=Craft+Image
+- https://via.placeholder.com/300x300/8b4513/ffffff?text=Artisan+Photo
+- https://via.placeholder.com/200x60/d4a574/ffffff?text=Logo

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Fix Instructions - KalaSetuGram</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        
+        .fix-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .fix-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .step-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+        
+        .btn-fix {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-fix:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="fix-card">
+                    <div class="fix-header">
+                        <i class="fas fa-database mb-3" style="font-size: 3rem;"></i>
+                        <h1 class="mb-2">Database Fix Required</h1>
+                        <p class="mb-0">Your admin pages need some database columns to work properly</p>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <strong>Issue:</strong> The admin pages are trying to access database columns that don't exist yet. This is normal for a new installation.
+                        </div>
+                        
+                        <h4 class="mb-4">
+                            <i class="fas fa-tools me-2"></i>
+                            Quick Fix Steps
+                        </h4>
+                        
+                        <div class="step-card">
+                            <div class="d-flex align-items-start">
+                                <span class="step-number">1</span>
+                                <div>
+                                    <h5>Run the Database Update Script</h5>
+                                    <p class="mb-2">Click the button below to automatically add the missing database columns:</p>
+                                    <a href="update_database.php" class="btn-fix">
+                                        <i class="fas fa-magic me-2"></i>
+                                        Fix Database Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="d-flex align-items-start">
+                                <span class="step-number">2</span>
+                                <div>
+                                    <h5>Alternative: Manual SQL Commands</h5>
+                                    <p>If the automatic fix doesn't work, run these SQL commands in phpMyAdmin:</p>
+                                    <div class="code-block">
+ALTER TABLE crafts ADD COLUMN featured BOOLEAN DEFAULT FALSE;<br>
+ALTER TABLE users ADD COLUMN status ENUM('active', 'inactive') DEFAULT 'active';<br>
+ALTER TABLE artisans ADD COLUMN specialization VARCHAR(200);<br>
+ALTER TABLE artisans ADD COLUMN location VARCHAR(200);<br>
+ALTER TABLE artisans ADD COLUMN verified BOOLEAN DEFAULT FALSE;<br>
+ALTER TABLE orders ADD COLUMN status ENUM('pending', 'confirmed', 'processing', 'shipped', 'delivered', 'cancelled') DEFAULT 'pending';
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="d-flex align-items-start">
+                                <span class="step-number">3</span>
+                                <div>
+                                    <h5>Access Your Admin Panel</h5>
+                                    <p>After fixing the database, you can access all admin features:</p>
+                                    <div class="row mt-3">
+                                        <div class="col-md-6">
+                                            <a href="dashboard.php" class="btn btn-outline-primary w-100 mb-2">
+                                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="users.php" class="btn btn-outline-primary w-100 mb-2">
+                                                <i class="fas fa-users me-2"></i>Users
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="crafts.php" class="btn btn-outline-primary w-100 mb-2">
+                                                <i class="fas fa-palette me-2"></i>Crafts
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="orders.php" class="btn btn-outline-primary w-100 mb-2">
+                                                <i class="fas fa-shopping-cart me-2"></i>Orders
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-info mt-4">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <strong>Note:</strong> This is a one-time setup. After running the database update, all admin pages will work perfectly!
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <a href="../index.php" class="btn btn-outline-secondary me-2">
+                                <i class="fas fa-home me-2"></i>Back to Website
+                            </a>
+                            <a href="update_database.php" class="btn-fix">
+                                <i class="fas fa-rocket me-2"></i>Fix & Launch Admin Panel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
